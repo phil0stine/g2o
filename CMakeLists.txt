@@ -3,6 +3,8 @@ SET(CMAKE_LEGACY_CYGWIN_WIN32 0)
 
 PROJECT(g2o)
 
+find_package(catkin REQUIRED COMPONENTS)
+
 # The library prefix
 SET(LIB_PREFIX g2o_)
 
@@ -267,3 +269,11 @@ INSTALL(FILES ${PROJECT_BINARY_DIR}/g2o/config.h DESTINATION ${CMAKE_INSTALL_PRE
 # Include the subdirectories
 ADD_SUBDIRECTORY(EXTERNAL)
 ADD_SUBDIRECTORY(g2o)
+
+set (G2O_LIBS -lg2o_core -lg2o_csparse_extension
+  -lg2o_solver_cholmod -lg2o_solver_csparse -lg2o_solver_dense
+  -lg2o_types_slam3d -lg2o_stuff)
+
+catkin_package(
+  LIBRARIES ${G2O_LIBS}
+  )

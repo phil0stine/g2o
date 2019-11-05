@@ -1,0 +1,13 @@
+<package format="2">
+    <name>g2o</name>
+    <version>2017.07.30</version>
+    <description>
+     Catkinized g2o
+    </description>
+    <maintainer email="philip.r.osteen.civ@mail.mil">Phil Osteen</maintainer>
+    <author email="philip.r.osteen.civ@mail.mil">Phil Osteen</author>
+    <license>None</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+</package>
