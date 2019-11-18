@@ -270,9 +270,9 @@ INSTALL(FILES ${PROJECT_BINARY_DIR}/g2o/config.h DESTINATION ${CMAKE_INSTALL_PRE
 ADD_SUBDIRECTORY(EXTERNAL)
 ADD_SUBDIRECTORY(g2o)
 
-set (G2O_LIBS -lg2o_core -lg2o_csparse_extension
-  -lg2o_solver_cholmod -lg2o_solver_csparse -lg2o_solver_dense
-  -lg2o_types_slam3d -lg2o_stuff)
+set (G2O_LIBS g2o_core g2o_csparse_extension
+  g2o_solver_cholmod g2o_solver_csparse g2o_solver_dense
+  g2o_types_slam3d g2o_stuff)
 
 catkin_package(
   LIBRARIES ${G2O_LIBS}
