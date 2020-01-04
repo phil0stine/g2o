@@ -266,14 +266,18 @@ configure_file(config.h.in ${PROJECT_BINARY_DIR}/g2o/config.h)
 include_directories(${PROJECT_BINARY_DIR})
 INSTALL(FILES ${PROJECT_BINARY_DIR}/g2o/config.h DESTINATION ${CMAKE_INSTALL_PREFIX}/include/g2o)
 
-# Include the subdirectories
-ADD_SUBDIRECTORY(EXTERNAL)
-ADD_SUBDIRECTORY(g2o)
 
 set (G2O_LIBS g2o_core g2o_csparse_extension
   g2o_solver_cholmod g2o_solver_csparse g2o_solver_dense
   g2o_types_slam3d g2o_stuff)
 
+configure_file(config.h.in ${g2o_SOURCE_DIR}/g2o/config.h)
+
 catkin_package(
+  INCLUDE_DIRS ${g2o_SOURCE_DIR}
   LIBRARIES ${G2O_LIBS}
   )
+
+# Include the subdirectories
+ADD_SUBDIRECTORY(EXTERNAL)
+ADD_SUBDIRECTORY(g2o)
